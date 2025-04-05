@@ -1,0 +1,88 @@
+.language-selector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.language-button {
+  flex: 1;
+  padding: 16px 24px; /* Increased padding */
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.1rem; /* Increased font size */
+  min-height: 60px; /* Minimum height */
+}
+
+.language-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.language-button[data-active="true"]::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0) translate(-50%, -50%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+.language-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.language-button.active {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Language-specific colors */
+.python { background: #306998; color: white; }
+.javascript { background: #f7df1e; color: black; }
+.typescript { background: #3178c6; color: white; }
+.java { background: #b07219; color: white; }
+.cpp { background: #00599c; color: white; }
+
+.python.active { background: #3a7aac; }
+.javascript.active { background: #ffe600; }
+.typescript.active { background: #3a86c6; }
+.java.active { background: #c47e1a; }
+.cpp.active { background: #0066aa; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .language-selector {
+    flex-direction: column;
+  }
+  
+  .language-button {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}
