@@ -1,0 +1,228 @@
+.description-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    padding: 2rem;
+  }
+  
+  .description-container.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .description-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(30, 41, 59, 0.8);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .image-section, .text-section {
+    flex: 1;
+    padding: 3rem;
+  }
+  
+  .image-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(56, 189, 248, 0.2) 0%, rgba(30, 41, 59, 0.7) 100%);
+  }
+  
+  .floating-code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    font-family: 'Fira Code', monospace;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .code-line {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: floatIn 0.5s forwards;
+  }
+  
+  @keyframes floatIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    color: white;
+  }
+  
+  .title-part {
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: titleReveal 0.6s forwards;
+  }
+  
+  .title-part:nth-child(1) {
+    color: #38bdf8;
+    animation-delay: 0.1s;
+  }
+  
+  .title-part:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  
+  .title-part:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes titleReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .features {
+    margin: 2rem 0;
+  }
+  
+  .feature-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: featureReveal 0.5s forwards;
+  }
+  
+  .feature-item:nth-child(1) { animation-delay: 0.7s; }
+  .feature-item:nth-child(2) { animation-delay: 0.9s; }
+  .feature-item:nth-child(3) { animation-delay: 1.1s; }
+  
+  @keyframes featureReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .feature-icon {
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+  }
+  
+  .feature-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.3rem;
+  }
+  
+  .feature-item p {
+    color: #94a3b8;
+    line-height: 1.5;
+  }
+  
+  .get-started-button {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: buttonReveal 0.5s 1.3s forwards;
+  }
+  
+  @keyframes buttonReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .get-started-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  }
+  
+  .button-arrow {
+    transition: transform 0.3s ease;
+  }
+  
+  .get-started-button:hover .button-arrow {
+    transform: translateX(5px);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .description-content {
+      flex-direction: column;
+    }
+    
+    .image-section, .text-section {
+      padding: 2rem;
+    }
+    
+    .title {
+      font-size: 2.5rem;
+    }
+  }

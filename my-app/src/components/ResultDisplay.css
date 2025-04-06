@@ -1,0 +1,119 @@
+.result-container {
+    margin-top: 20px;
+  }
+  
+  .result-container h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .score {
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-left: 8px;
+  }
+  
+  .issues-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .issue-card {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .issue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: var(--danger-color);
+  }
+  
+  .toggle-explanation {
+    background: transparent;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 4px 8px;
+  }
+  
+  .issue-details {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .ai-explanation h4 {
+    margin: 0 0 8px 0;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+  }
+  
+  .ai-explanation p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+  
+  .quick-fix {
+    background: rgba(0,0,0,0.1);
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+  }
+  
+  .quick-fix h4 {
+    margin: 0 0 8px 0;
+    font-size: 0.95rem;
+  }
+  
+  .quick-fix code {
+    display: block;
+    background: rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 4px;
+    margin: 8px 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+  }
+  
+  .apply-fix {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+  }
+  
+  .apply-fix:hover {
+    opacity: 0.9;
+  }
+  
+  .no-issues {
+    background: var(--success-color);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .vulnerability-message {
+    color: var(--danger-color);
+    font-weight: bold;
+  }
+  
